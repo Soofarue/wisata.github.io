@@ -1,0 +1,236 @@
+:root{
+    --primary: #0081A7 - #00AFB9;
+    --secondary: #00AFB9;
+    --third: #FED9B7;
+    --light: aliceblue;
+    --black: #0D1F23;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--light)
+}
+
+.container{
+    background-color: var(--black);
+}
+
+
+/*---------------- NAVBAR CODE -------------------*/
+
+header {
+    border-bottom: 2px solid var(--third);
+    padding: .8rem;
+    width: 100%;
+    position: absolute;
+    background-color: transparent;
+}
+
+.navbar {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+}
+
+.navbar-brand {
+    width: 3rem;
+}
+
+.navbarCollapse {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    cursor: pointer;
+    padding: .5rem;
+    background: none;
+}
+
+.navbar-nav {
+    list-style: none;
+    margin-top: 1.5rem;
+    padding-bottom: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.navbar-nav.hidden {
+    display: none;
+}
+
+.navbar-nav.show {
+    display: block;
+    background-color: #0D1F23;
+}
+
+.nav-item {
+    margin-top: .5rem;
+}
+
+.nav-link, .navbar-button {
+    display: block;
+    color: var(--third);
+    padding: 1rem;
+    text-decoration: none;
+    border-radius: .5rem;
+}
+
+.nav-link.active, .nav-link:hover, .navbar-button:hover {
+    background-color: var(--secondary);
+    color: white;
+}
+
+/* ==========INTRO============================== */
+
+.intro{
+    background-image: url(img/intro.jpeg);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.desc-intro{
+    width: 70%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .9;
+    border: 2px solid black;
+}
+
+.desc-title{
+    color: var(--third);
+    margin-bottom: .5rem;
+}
+
+p{
+    margin-bottom: .7rem;
+    color: var(--light);
+    opacity: .6;
+    word-spacing: 1px;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.title{
+    color: var(--light);
+    font-weight: 200;
+}
+
+/*------ CONTENT CODE -------------------------------------------*/
+
+.section-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    display: block;
+    margin-top: 1rem;
+}
+
+.desc-content{
+   display: block;
+   text-align: left;
+   padding: 2.5rem 3rem 2.5rem 3rem;
+}
+
+.content-title{
+    margin-bottom: .7rem;
+    color: var(--light);
+}
+
+
+/* ====================================================== */
+
+.container-profile {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	gap: 1em;
+	width: 100%;
+	height: 500px;
+	transition: all 400ms;
+    margin-top: 1.5rem;
+}
+
+.container-profile:hover .box-profile {
+	filter: grayscale(100%) opacity(24%);
+}
+
+.box-profile {
+	position: relative;
+	background: var(--img) center center;
+	background-size: cover;
+	transition: all 400ms;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container-profile .box-profile:hover {
+	filter: grayscale(0%) opacity(100%);
+}
+
+.container-profile:has(.box-1-profile:hover) {
+	grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+}
+
+.container-profile:has(.box-2-profile:hover) {
+	grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+}
+
+.container-profile:has(.box-3-profile:hover) {
+	grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+}
+
+.container-profile:has(.box-4-profile:hover) {
+	grid-template-columns: 1fr 1fr 1fr 3fr 1fr;
+}
+
+.container-profile:has(.box-5-profile:hover) {
+	grid-template-columns: 1fr 1fr 1fr 1fr 3fr;
+}
+
+.box-profile:nth-child(odd) {
+	transform: translateY(-16px);
+}
+
+.box-profile:nth-child(even) {
+	transform: translateY(16px);
+}
+
+.box-profile::after {
+	content: attr(data-text);
+	position: absolute;
+	bottom: 20px;
+	background: #000;
+	color: #fff;
+	padding: 10px 10px 10px 14px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	transform: translateY(60px);
+	opacity: 0;
+	transition: all 400ms;
+}
+
+.box-profile:hover::after {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 400ms;
+}

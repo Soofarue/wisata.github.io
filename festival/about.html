@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="about.css">
+  <script src="https://kit.fontawesome.com/e99091839a.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <h1 class="brand-name">CAKRA</h1>
+        </div>
+        <button id="navbarCollapse" class="navbarCollapse"><i class="fa-solid fa-bars fa-xl" style="color: #f0790a;"></i></button>
+          <ul class="navbar-nav hidden" id="navbarNav">
+            <li class="nav-item"><a href="main.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="travel.html" class="nav-link">Travel Maps</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link active">About us</a></li>
+            <li class="nav-item"><a href="blog.html" class="navbar-button">Blog</a></li>
+          </ul>
+      </nav>
+    </header>
+
+<!-- ================================================================= -->
+    <section class="section-intro">
+      <div class="intro">
+        <div class="desc-intro">
+          <h6 class="desc-title">------------------------  WE ARE CAKRA TRAVEL AGENCY.</h6>
+          <h1 class="title"><strong>"Together</strong> Breaking Boundaries"</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <section class="section-content">
+      <div class="content">
+        <div class="desc-content">
+            <h6 class="desc-title">----------  ABOUT</h6>
+            <h3 class="content-title">Nature stretches wide, make it a teacher</h3>
+            <p>Kami adalah kelompok pecinta alam yang bersemangat, menawarkan pengalaman pendakian yang mendalam dan aman untuk menjelajahi keindahan alam yang menakjubkan, sambil memberikan penghargaan yang tinggi terhadap alam dan lingkungan.</p>
+        </div>
+    </div>
+  
+<!-- ============================================================================== -->
+    <div class="header-profile">
+      <h1 class="title">Meet Our Team</h1>
+    </div>
+
+    <div class="container-profile">
+      <div class="box-profile box-1-profile" style="--img: url(img/bromo.jpeg);" data-text="Renji"></div>
+      <div class="box-profile box-2-profile" style="--img: url(img/desc.jpeg);" data-text="Sora"></div>
+      <div class="box-profile box-3-profile" style="--img: url(img/intro.jpeg);" data-text="Kaito"></div>
+      <div class="box-profile box-4-profile" style="--img: url(img/map.jpeg);" data-text="Tsuki"></div>
+      <div class="box-profile box-5-profile" style="--img: url(img/Mount\ Rinjani.jpeg);" data-text="Mitsui"></div>
+    </div>
+  </div>
+
+
+
+  <script>
+    const navbarCollapse = document.getElementById("navbarCollapse");
+    const navbarNav = document.getElementById("navbarNav");
+
+    navbarCollapse.addEventListener("click", function(e){
+        e.preventDefault();
+
+        if(navbarNav.classList.contains ("hidden")){
+            navbarNav.classList.remove("hidden");
+            navbarNav.classList.add("show");
+        }else{
+            navbarNav.classList.remove("show");
+            navbarNav.classList.add("hidden");
+        }
+    });
+</script>
+</body>
+</html>

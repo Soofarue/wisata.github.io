@@ -1,0 +1,545 @@
+:root{
+    --primary: #0081A7 - #00AFB9;
+    --secondary: #00AFB9;
+    --third: #FED9B7;
+    --light: aliceblue;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--light)
+}
+
+.container{
+    background-color: #0D1F23;
+}
+
+/*---------------- NAVBAR CODE -------------------------------------*/
+.section-navbar{
+	width: 100%;
+	position: sticky;
+	top: 0;
+}
+
+.navbar{
+    width: 100%;
+    padding: 1.3rem;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    position: absolute;
+	top: 0;
+    color: var(--light);
+}
+
+.navbar-nav ul{
+    display: flex;
+    gap: 1rem;
+    padding-top: .2rem;
+}
+
+/*--------------- HEADER CODE ---------------------------------*/
+
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/Prahu.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+.desc-header{
+    width: 70%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .9;
+}
+
+.desc-title{
+    color: var(--third);
+    margin-bottom: .5rem;
+}
+
+.content-title{
+    margin-bottom: .7rem;
+    color: var(--light);
+}
+
+p{
+    margin-bottom: .7rem;
+    color: var(--light);
+    opacity: .6;
+    word-spacing: 1px;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.title{
+    color: var(--light);
+    font-weight: 200;
+}
+
+.cta-header{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem 2rem;
+    background-color: var(--third);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 10px 10px 60px 0px rgba(62,66,66,0.9);
+}
+
+/*------ CONTENT CODE -------------------------------------------*/
+
+.section-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    display: block;
+    margin-top: 3rem;
+}
+
+.desc-content{
+   display: block;
+   text-align: left;
+   padding: 2.5rem 3rem 2.5rem 3rem;
+}
+
+
+.box-box-right{
+    width: 24rem;
+    float: right;
+}
+
+.box-box-left{
+    width: 24rem;
+    float: left;
+}
+
+.box-size-content-right{
+    display: block;
+    width: 85%;
+    float: right;
+}
+
+.box-size-content-left{
+    display: block;
+    width: 85%;
+    float: left;
+}
+
+.img-content-right{
+    width: 100%;
+    border-radius: 13rem 0 0 13rem;
+}
+
+.img-content-left{
+    width: 100%;
+    border-radius: 0 13rem 13rem 0;
+}
+
+/* --- CONTENT CENTER CODE ----- */
+
+.content-center{
+    display: block;
+    margin-top: 2.5rem;
+}
+
+.desc-content-center{
+   display: block;
+   text-align: center;
+   padding: 2.5rem 3rem 2.5rem 3rem;
+}
+
+.cta-content{
+    padding: 1rem 2rem;
+    margin: .5rem 0 2rem 0;
+    background-color: var(--third);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 10px 10px 60px 0px rgba(62,66,66,0.9);
+}
+
+/* -- GALLERY CODE ------------- */
+
+.gallery{
+    display: grid;
+	grid-template-columns: repeat(3,1fr);
+	gap: 15px;
+}
+@media (max-widht:768px){
+	.gallery{
+		grid-template-columns: repeat(2,1fr);
+	}
+}
+@media (max-width:480px){
+	.gallery{
+		grid-template-columns: repeat(1,1fr);
+	}
+}
+
+.item-gallery{
+    width: 100%;
+}
+
+.img-gallery{
+    width: 100%;
+}
+
+.img-gallery1{
+    background-image: url(img/sindoro.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+	padding: 10px;
+	margin: 0 70px;
+    border-radius: 15px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+    box-shadow: 0px 2px 3px 1px #0006;
+    /* ---------------- efek kaca----------------- */
+    &:before {
+		font-size: 30px;
+		line-height: 50px;
+		padding-left: 10px;
+		mix-blend-mode: exclusion;
+		border-radius: 15px;
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(110deg, #fffd, #fff0 20%, #fff0 70%, #fffd);
+		opacity: 1;
+		transition: opacity 0.65s ease 0s;
+		box-sizing: border-box;
+	}
+    &:after {
+		content: "";
+		background-color: #fff9;
+		opacity: 0.6;
+		top: 0;
+		bottom: 0;
+		left: -100%;
+		position: absolute;
+		width: 5vmin;
+		box-shadow: 0 0 10vmin 2.5vmin #fff;
+		transform: skew(-20deg);
+		transition: all 0.25s ease;
+	}
+    &:hover {
+		&:before {
+			opacity: 0;
+			transition: opacity 0.65s ease 0s;
+		}
+        &:after {
+			left: 400px;
+			transition: left 0.5s ease 0s;
+		}
+	}
+}
+
+.img-gallery2{
+    background-image: url(img/bromo.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+	padding: 10px;
+	margin: 0 70px;
+    border-radius: 15px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+    box-shadow: 0px 2px 3px 1px #0006;
+    /* ---------------- efek kaca----------------- */
+    &:before {
+		font-size: 30px;
+		line-height: 50px;
+		padding-left: 10px;
+		mix-blend-mode: exclusion;
+		border-radius: 15px;
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(110deg, #fffd, #fff0 20%, #fff0 70%, #fffd);
+		opacity: 1;
+		transition: opacity 0.65s ease 0s;
+		box-sizing: border-box;
+	}
+    &:after {
+		content: "";
+		background-color: #fff9;
+		opacity: 0.6;
+		top: 0;
+		bottom: 0;
+		left: -100%;
+		position: absolute;
+		width: 5vmin;
+		box-shadow: 0 0 10vmin 2.5vmin #fff;
+		transform: skew(-20deg);
+		transition: all 0.25s ease;
+	}
+    &:hover {
+		&:before {
+			opacity: 0;
+			transition: opacity 0.65s ease 0s;
+		}
+        &:after {
+			left: 400px;
+			transition: left 0.5s ease 0s;
+		}
+	}
+}
+
+.img-gallery3{
+    background-image: url(img/slamet.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+	padding: 10px;
+	margin: 0 70px;
+    border-radius: 15px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+    box-shadow: 0px 2px 3px 1px #0006;
+   /* ---------------- efek kaca----------------- */
+    &:before {
+		font-size: 30px;
+		line-height: 50px;
+		padding-left: 10px;
+		mix-blend-mode: exclusion;
+		border-radius: 15px;
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(110deg, #fffd, #fff0 20%, #fff0 70%, #fffd);
+		opacity: 1;
+		transition: opacity 0.65s ease 0s;
+		box-sizing: border-box;
+	}
+    &:after {
+		content: "";
+		background-color: #fff9;
+		opacity: 0.6;
+		top: 0;
+		bottom: 0;
+		left: -100%;
+		position: absolute;
+		width: 5vmin;
+		box-shadow: 0 0 10vmin 2.5vmin #fff;
+		transform: skew(-20deg);
+		transition: all 0.25s ease;
+	}
+    &:hover {
+		&:before {
+			opacity: 0;
+			transition: opacity 0.65s ease 0s;
+		}
+        &:after {
+			left: 400px;
+			transition: left 0.5s ease 0s;
+		}
+	}
+}
+
+.img-gallery4{
+    background-image: url(img/Mount\ Rinjani.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+	padding: 10px;
+	margin: 0 70px;
+    border-radius: 15px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+    box-shadow: 0px 2px 3px 1px #0006;
+   /* ---------------- efek kaca----------------- */
+    &:before {
+		font-size: 30px;
+		line-height: 50px;
+		padding-left: 10px;
+		mix-blend-mode: exclusion;
+		border-radius: 15px;
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(110deg, #fffd, #fff0 20%, #fff0 70%, #fffd);
+		opacity: 1;
+		transition: opacity 0.65s ease 0s;
+		box-sizing: border-box;
+	}
+    &:after {
+		content: "";
+		background-color: #fff9;
+		opacity: 0.6;
+		top: 0;
+		bottom: 0;
+		left: -100%;
+		position: absolute;
+		width: 5vmin;
+		box-shadow: 0 0 10vmin 2.5vmin #fff;
+		transform: skew(-20deg);
+		transition: all 0.25s ease;
+	}
+    &:hover {
+		&:before {
+			opacity: 0;
+			transition: opacity 0.65s ease 0s;
+		}
+        &:after {
+			left: 400px;
+			transition: left 0.5s ease 0s;
+		}
+	}
+}
+
+.img-gallery5{
+    background-image: url(img/Sumbing.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+	padding: 10px;
+	margin: 0 70px;
+    border-radius: 15px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+    box-shadow: 0px 2px 3px 1px #0006;
+   /* ---------------- efek kaca----------------- */
+    &:before {
+		font-size: 30px;
+		line-height: 50px;
+		padding-left: 10px;
+		mix-blend-mode: exclusion;
+		border-radius: 15px;
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(110deg, #fffd, #fff0 20%, #fff0 70%, #fffd);
+		opacity: 1;
+		transition: opacity 0.65s ease 0s;
+		box-sizing: border-box;
+	}
+    &:after {
+		content: "";
+		background-color: #fff9;
+		opacity: 0.6;
+		top: 0;
+		bottom: 0;
+		left: -100%;
+		position: absolute;
+		width: 5vmin;
+		box-shadow: 0 0 10vmin 2.5vmin #fff;
+		transform: skew(-20deg);
+		transition: all 0.25s ease;
+	}
+    &:hover {
+		&:before {
+			opacity: 0;
+			transition: opacity 0.65s ease 0s;
+		}
+        &:after {
+			left: 400px;
+			transition: left 0.5s ease 0s;
+		}
+	}
+}
+
+.img-gallery-size{
+    width: 8rem;
+    height: 15rem;
+}
+
+.item-gallery .content-title{
+    position: absolute;
+    padding-top: 20px;
+}
+
+/* -- DESC CODE -- */
+
+.desc .content-title{
+    text-align: center;
+}
+
+.desc p{
+    text-align: center;
+}
+
+.section-desc .desc-content-center{
+    display: block;
+    text-align: center;
+    padding: 2.5rem 3rem 2.5rem 3rem;
+    margin-top: 2rem;
+ }
+
+ /* -- OTHER CODE -- */
+
+.section-other{
+	background-image: url(img/desc.jpeg);
+	background-size: cover;
+}
+
+.other{
+    padding: 2.5rem 2.5rem;
+}
+
+.other .content-title{
+    text-align: center;
+}
+
+.other p{
+    text-align: center;
+    opacity: .9;
+    letter-spacing: 1px;
+}
+
+ /* -- FOOTER CODE -- */
+.footer{
+	display: flex;
+	padding: 3.5rem 2rem;
+	justify-content: space-between;
+}
+
+.footer .brand-footer .brand-name{
+	color: #F0F8FF;
+}
+
